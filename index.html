@@ -1,1 +1,31 @@
-go to resent client <a href="https://resclient.vercel.app/">here</a>
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://doc.detoxnetwork.repl.co/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+  </head>
+    <title>Redirect</title>
+    <body>
+      <p>This site is redirecting to Resclient. Redirecting in <span id="launchCountdownNumber">5</span> seconds</p>
+      <meta http-equiv="refresh" content="5; url=https://detoxnetwork.github.io/resent-client/javascript/">
+    </body>
+  <script>
+    var launchInterval = -1;
+var launchCounter = 1;
+var launchCountdownNumberElement = null;
+var launchCountdownProgressElement = null;
+
+function launchTick() {
+	launchCountdownNumberElement.innerText = "" + Math.floor(6.0 - launchCounter * 0.06);
+	if(++launchCounter > 100) {
+		clearInterval(launchInterval);
+		setTimeout(() => { document.getElementById("launch_countdown_screen").remove(); main(); }, 50);
+	}
+}
+
+window.addEventListener("load", () => {
+	launchCountdownNumberElement = document.getElementById("launchCountdownNumber");
+	launchInterval = setInterval(launchTick, 50);
+});
+  </script>
+</html>
